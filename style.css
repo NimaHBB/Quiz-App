@@ -90,7 +90,7 @@ html {
     justify-content: center;
     width: 23%;
     max-width: 60px;
-    background-color: rgb(255 255 255);
+    background-color:white;
     box-shadow: 2px 20px 5px #303030;
     border: 0.1rem solid rgb(144 183 255 / 20%);
     border-radius: 20% 0;
@@ -109,7 +109,7 @@ html {
     right: 0.5px;
     top: -6.5px;
   }
-  
+
   footer {
     width: 100%;
     max-width: 1000px;

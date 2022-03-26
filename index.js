@@ -1,16 +1,16 @@
 function showAnswer(element) {
     element.classList.toggle("button1");
-  
-    document.getElementById("p" + element.id).classList.toggle("answer");
+    element.parentElement.querySelector("p.answer-p").classList.toggle("answer");
   }
 
-function addHomediv(){
+function addHomediv(currMenue){
     removeContents();
+    changeFooterButtonColor(currMenue)
   document.querySelector("main").innerHTML=`
 
         <section>
             <article>
-                <img src="assets/bookmark_Blank.png" alt="bookmark_Blank" class="bookmark" />
+                <img id="test" src="assets/bookmark_Blank.png" alt="bookmark_Blank" class="bookmark" onclick="imgsrcToggle(this)"/>
                 <p>1- For which OS can Javascript be used?</p>
                 <button id="1" class="button" onclick="showAnswer(this)"></button>
                 <p id="p1" class="answer-p"></p>
@@ -22,7 +22,7 @@ function addHomediv(){
                 </ul>
             </article>
             <article>
-                <img src="assets/bookmarked.png" alt="bookmark_Blank" class="bookmark" />
+                <img src="assets/bookmarked.png" alt="bookmark_Blank" class="bookmark" onclick="imgsrcToggle(this)"/>
                 <p>2- For which OS can Javascript be used?</p>
                 <button id="2" class="button" onclick="showAnswer(this)"></button>
                 <p id="p2" class="answer-p"></p>
@@ -34,7 +34,7 @@ function addHomediv(){
                 </ul>
             </article>
             <article>
-                <img src="assets/bookmark_Blank.png" alt="bookmark_Blank" class="bookmark" />
+                <img src="assets/bookmark_Blank.png" alt="bookmark_Blank" class="bookmark" onclick="imgsrcToggle(this)"/>
                 <p>3- For which OS can Javascript be used?</p>
                 <button id="3" class="button" onclick="showAnswer(this)"></button>
                 <p id="p3" class="answer-p"></p>
@@ -46,7 +46,7 @@ function addHomediv(){
                 </ul>
             </article>
             <article>
-                <img src="assets/bookmarked.png" alt="bookmarked" class="bookmark" />
+                <img src="assets/bookmarked.png" alt="bookmarked" class="bookmark" onclick="imgsrcToggle(this)"/>
                 <p>4- For which OS can Javascript be used?</p>
                 <button id="4" class="button" onclick="showAnswer(this)"></button>
                 <p id="p4" class="answer-p"></p>
@@ -58,7 +58,7 @@ function addHomediv(){
                 </ul>
             </article>
             <article>
-                <img src="assets/bookmark_Blank.png" alt="bookmark_Blank" class="bookmark" />
+                <img src="assets/bookmark_Blank.png" alt="bookmark_Blank" class="bookmark" onclick="imgsrcToggle(this)"/>
                 <p>5- For which OS can Javascript be used?</p>
                 <button id="5" class="button" onclick="showAnswer(this)"></button>
                 <p id="p5" class="answer-p"></p>
@@ -70,7 +70,7 @@ function addHomediv(){
                 </ul>
             </article>
             <article>
-                <img src="assets/bookmark_Blank.png" alt="bookmark_Blank" class="bookmark" />
+                <img src="assets/bookmark_Blank.png" alt="bookmark_Blank" class="bookmark" onclick="imgsrcToggle(this)"/>
                 <p>6- For which OS can Javascript be used?</p>
                 <button id="6" class="button" onclick="showAnswer(this)"></button>
                 <p id="p6" class="answer-p"></p>
@@ -84,23 +84,22 @@ function addHomediv(){
         </section>
   `;
 
-  document.getElementById('main').appendChild();
-
 }
 
 function removeContents(){
     document.querySelector("main").innerHTML="";
 }
 
-function addBookmarks(){
+function addBookmarks(currMenue){
   removeContents();
+  changeFooterButtonColor(currMenue)
   document.querySelector("main").innerHTML=`  
   <section>
   <article>
-    <img src="assets/bookmarked.png" alt="bookmark_Blank" class="bookmark">
+    <img src="assets/bookmarked.png" alt="bookmark_Blank" class="bookmark" onclick="imgsrcToggle(this)">
     <p>2- For which OS can Javascript be used?</p>
-    <button id="2" class="button" onclick="showAnswer(this)"></button>
-    <p id="p2" class="answer-p1"></p>
+    <button class="button" onclick="showAnswer(this)"></button>
+    <p class="answer-p"></p>
     <ul>
       <li><button class="answer-buttons">Windows</button></li>
       <li><button class="answer-buttons">Android</button></li>
@@ -109,10 +108,10 @@ function addBookmarks(){
     </ul>
   </article>
   <article>
-    <img src="assets/bookmarked.png" alt="bookmarked" class="bookmark">
+    <img src="assets/bookmarked.png" alt="bookmarked" class="bookmark" onclick="imgsrcToggle(this)">
     <p>4- For which OS can Javascript be used?</p>
-    <button id="4" class="button" onclick="showAnswer(this)"></button>
-    <p id="p4" class="answer-p"></p>
+    <button class="button" onclick="showAnswer(this)"></button>
+    <p class="answer-p"></p>
     <ul>
       <li><button class="answer-buttons">Windows</button></li>
       <li><button class="answer-buttons">Android</button></li>
@@ -122,12 +121,11 @@ function addBookmarks(){
   </article>
 </section>
   `
-  document.getElementById('main').appendChild();
 }
 
-function addQuestiondiv(){
-
+function addQuestiondiv(currMenue){
   removeContents();
+  changeFooterButtonColor(currMenue)
   document.querySelector("main").innerHTML=`
   <section>
   <form action="">
@@ -146,8 +144,29 @@ function addQuestiondiv(){
   </form> 
   </section>
   `
-  document.getElementById('main').appendChild();
 }
   function countLength(element) {
     document.querySelector('.'+element.id).innerHTML=element.value.length;
   };
+
+  function findRec(){
+    document.getElementById("5").scrollIntoView();
+  }
+
+  
+  function imgsrcToggle(imgElement){
+    
+    if(imgElement.src.includes('bookmarked.png'))
+    {
+      imgElement.src="../assets/bookmark_Blank.png"
+    }
+    else{
+      imgElement.src="../assets/bookmarked.png"
+    }
+  }
+
+  function changeFooterButtonColor(currMenueBG){
+    const fotterbtns= currMenueBG.parentElement.querySelectorAll('.footerButton')
+    fotterbtns.forEach(footerbtn => footerbtn.style.backgroundColor='white');
+    currMenueBG.style.backgroundColor='gold';
+  }
