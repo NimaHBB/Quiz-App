@@ -158,10 +158,10 @@ function addQuestiondiv(currMenue){
     
     if(imgElement.src.includes('bookmarked.png'))
     {
-      imgElement.src="../assets/bookmark_Blank.png"
+      imgElement.src="/assets/bookmark_Blank.png"
     }
     else{
-      imgElement.src="../assets/bookmarked.png"
+      imgElement.src="/assets/bookmarked.png"
     }
   }
 
