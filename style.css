@@ -1,199 +1,199 @@
 html {
-    background-color: white;
-  }
-  
+  background-color: white;
+}
+
+body {
+  max-width: 1000px;
+  min-width: 380px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: rgb(241 241 241);
+}
+
+main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 8vh 92vh;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(37 37 37);
+  color: rgb(255 255 255);
+  z-index: 1;
+  height: 6vh;
+}
+
+header label {
+  font-size: 2rem;
+  text-shadow: 2px 2px 20px rgb(0 0 0);
+}
+
+section {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
+
+article {
+  position: relative;
+  display: grid;
+  grid-template-columns: 100%;
+  border-radius: 2px 15px;
+  padding: 0 3vw;
+  margin: 5px 5vw;
+  background-color: white;
+  box-shadow: 5px 2px 12px rgb(165 165 165 / 50%);
+  justify-items: center;
+}
+
+p {
+  justify-self: left;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  font-size: 1.2rem;
+  max-width: 100%;
+}
+
+.answer-p {
+  display: none;
+}
+.answer {
+  display: flex;
+}
+
+.answer::after {
+  display: block;
+  font-size: 1.2rem;
+  max-width: 100%;
+  color: #00610d;
+  content: "Javascript can be used to develope Apps for all Operating Systems";
+}
+
+article ul {
+  max-width: 100%;
+  list-style-type: none;
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  flex-flow: row nowrap;
+  margin: 10px auto;
+  padding: 10px 0 0;
+}
+
+article ul a {
+  width: 100%;
+  margin: 0;
+}
+
+.bookmark {
+  max-width: 50px;
+  position: absolute;
+  right: 0.5px;
+  top: -6.5px;
+}
+
+footer {
+  width: 100%;
+  max-width: 1000px;
+  max-height: 6vh;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  bottom: 0;
+  list-style-type: none;
+  padding: 3px 0;
+  background-color: rgb(0 0 0 / 85%);
+}
+
+footer a {
+  display: flex;
+  justify-content: center;
+  width: 19%;
+  max-width: 60px;
+  background-color: white;
+  box-shadow: 2px 20px 5px #303030;
+  border: 0.1rem solid rgb(144 183 255 / 20%);
+  border-radius: 20% 0;
+  padding: auto;
+  margin: 0 0.3em;
+}
+
+footer a img {
+  max-width: 50%;
+  bottom: 0;
+}
+
+@media screen and (max-width: 600px) {
   body {
-    max-width: 1000px;
-    min-width: 380px;
-    min-height: 100vh;
-    margin: 0 auto;
-    background-color: rgb(241 241 241);
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
-  
+
   main {
     width: 100%;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 8vh 92vh;
   }
-  
-  header {
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    background-color: rgb(37 37 37);
-    color: rgb(255 255 255);
-    z-index: 1;
-    height: 5.5vh;
-  }
-  
-  header label {
-    font-size: 2rem;
-    text-shadow: 2px 2px 20px rgb(0 0 0);
-  }
-  
-  section {
-    width: 100%;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-  }
-  
-  article {
-    position: relative;
-    display: grid;
-    grid-template-columns: 100%;
-    border-radius: 2px 15px;
-    padding: 0 3vw;
-    margin: 10px 5vw;
-    background-color: white;
-    box-shadow: 5px 2px 12px rgb(165 165 165 / 50%);
-    justify-items: center;
-  }
-  
-  p {
-    justify-self: left;
-    margin-top: 1.5em;
-    margin-bottom: 1em;
-    font-size: 1.2rem;
-    max-width: 100%;
-  }
-  
-  .answer-p {
-    display: none;
-  }
-  .answer {
-    display: flex;
-  }
-  
-  .answer::after {
-    display: block;
-    font-size: 1.2rem;
-    max-width: 100%;
-    color: #00610d;
-    content: "Javascript can be used to develope Apps for all Operating Systems";
-  }
-  
-  article ul {
-    max-width: 100%;
-    list-style-type: none;
-    display: flex;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-items: center;
-    flex-flow: row nowrap;
-    margin: 10px auto;
-    padding: 10px 0 0;
-  }
-  
-  article ul a {
-    width: 100%;
-    margin: 0;
-  }
-  
-  .bookmark {
-    max-width: 50px;
-    position: absolute;
-    right: 0.5px;
-    top: -6.5px;
-  }
+}
 
-  footer {
-    width: 100%;
-    max-width: 1000px;
-    max-height: 6vh;
-    display: flex;
-    position: fixed;
-    justify-content: center;
-    bottom: 0;
-    list-style-type: none;
-    padding: 3px 0;
-    background-color: rgb(0 0 0 / 85%);
-  }
+.answer-buttons {
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: rgb(242 255 254);
+  border-radius: 15px;
+  border: 1px solid #797bf8;
+  color: #6062d4;
+  letter-spacing: 1px;
+  width: 98%;
+  height: 2.5rem;
+}
 
-  footer a{
-    display: flex;
-    justify-content:center;
-    width: 19%;
-    max-width: 60px;
-    background-color:white;
-    box-shadow: 2px 20px 5px #303030;
-    border: 0.1rem solid rgb(144 183 255 / 20%);
-    border-radius: 20% 0;
-    padding: auto;
-    margin: 0 0.3em;
-  }
+.answer-buttons:hover {
+  background-color: #6062d4;
+  color: rgb(242 255 254);
+}
 
-  footer a img{
-    max-width: 50%;
-    bottom: 0;
-  }
-  
-  @media screen and (max-width: 600px) {
-    body {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  
-    main {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: 8vh 92vh;
-    }
-  }
-  
-  .answer-buttons {
-    font-weight: 700;
-    font-size: 1rem;
-    background-color: rgb(242 255 254);
-    border-radius: 15px;
-    border: 1px solid #797bf8;
-    color: #6062d4;
-    letter-spacing: 1px;
-    width: 98%;
-    height: 2.5rem;
-  }
-  
-  .answer-buttons:hover {
-    background-color: #6062d4;
-    color: rgb(242 255 254);
-  }
-  
-  .button {
-    margin-top: 40px;
-    border-radius: 0.5rem;
-    background-color: #6062d4;
-    border: none;
-    color: white;
-    font-weight: 700;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    height: 2.5rem;
-    width: 60%;
-  }
-  
-  .button::after {
-    content: "Show Answer!";
-  }
-  
-  .button1::after {
-    content: "Hide Answer!";
-  }
-  
-  .button:hover {
-    background-color: white;
-    color: #6062d4;
-    border: 1px solid #797bf8;
-  }
-  form{
-    max-width: 100%;
-    list-style-type: none;
-    display: flex;
-    justify-items: center;
-    flex-flow: column nowrap;
-    margin: 10px auto;
-  }
-  
+.button {
+  margin-top: 5px;
+  border-radius: 0.5rem;
+  background-color: #6062d4;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  height: 2.5rem;
+  width: 60%;
+}
+
+.button::after {
+  content: "Show Answer!";
+}
+
+.button1::after {
+  content: "Hide Answer!";
+}
+
+.button:hover {
+  background-color: white;
+  color: #6062d4;
+  border: 1px solid #797bf8;
+}
+form {
+  max-width: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-items: center;
+  flex-flow: column nowrap;
+  margin: 10px auto;
+}
