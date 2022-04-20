@@ -43,9 +43,7 @@ html {
   article {
     position: relative;
     display: grid;
-    height: 16em;
     grid-template-columns: 100%;
-    grid-template-rows: 2em 4em 4em 4.5em;
     border-radius: 2px 15px;
     padding: 0 3vw;
     margin: 10px 5vw;
@@ -62,8 +60,11 @@ html {
     max-width: 100%;
   }
   
-  answer-p {
+  .answer-p {
     display: none;
+  }
+  .answer {
+    display: flex;
   }
   
   .answer::after {
@@ -85,19 +86,6 @@ html {
     padding: 10px 0 0;
   }
   
-  footer a {
-    display: flex;
-    justify-content: center;
-    width: 23%;
-    max-width: 60px;
-    background-color:white;
-    box-shadow: 2px 20px 5px #303030;
-    border: 0.1rem solid rgb(144 183 255 / 20%);
-    border-radius: 20% 0;
-    padding: 10% auto;
-    margin: 0 0.3em;
-  }
-  
   article ul a {
     width: 100%;
     margin: 0;
@@ -116,21 +104,27 @@ html {
     max-height: 6vh;
     display: flex;
     position: fixed;
-    bottom: 0;
     justify-content: center;
-  
-    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    bottom: 0;
     list-style-type: none;
-    margin: 0;
     padding: 3px 0;
-    background-color: rgb(0 0 0 / 80%);
+    background-color: rgb(0 0 0 / 85%);
   }
-  
-  .current-page-footer {
-    background-color: rgb(251 255 0);
+
+  footer a{
+    display: flex;
+    justify-content:center;
+    width: 19%;
+    max-width: 60px;
+    background-color:white;
+    box-shadow: 2px 20px 5px #303030;
+    border: 0.1rem solid rgb(144 183 255 / 20%);
+    border-radius: 20% 0;
+    padding: auto;
+    margin: 0 0.3em;
   }
-  
-  footer a img {
+
+  footer a img{
     max-width: 50%;
     bottom: 0;
   }
